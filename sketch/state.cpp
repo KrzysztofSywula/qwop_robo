@@ -10,33 +10,33 @@ state_t do_state_nothing() {
 }
 
 state_t do_state_initial() {
-  servo[0].setCenter();
-  servo[1].setCenter();
-  servo[2].setLeft();
-  servo[3].setRight();
+  servo[LEFT_THIGH].setCenter();
+  servo[RIGHT_THIGH].setCenter();
+  servo[RIGHT_SHIN].setLeft();
+  servo[LEFT_SHIN].setRight();
   return STATE_INITIAL;
 }
 
 state_t do_state_q() {
-  servo[0].turnLeft();
-  servo[1].turnLeft();
+  servo[LEFT_THIGH].turnLeft();
+  servo[RIGHT_THIGH].turnLeft();
   return STATE_Q;
 }
 
 state_t do_state_w() {
-  servo[1].turnRight();
-  servo[0].turnRight();
+  servo[RIGHT_THIGH].turnRight();
+  servo[LEFT_THIGH].turnRight();
   return STATE_W;
 }
 
 state_t do_state_o() {
-  servo[2].turnLeft();
-  servo[3].turnLeft();
+  servo[LEFT_SHIN].turnLeft();
+  servo[RIGHT_SHIN].turnLeft();
   return STATE_O;
 }
 
 state_t do_state_p() {
-  servo[2].turnRight();
-  servo[3].turnRight();
+  servo[RIGHT_SHIN].turnRight();
+  servo[LEFT_SHIN].turnRight();
   return STATE_P;
 }

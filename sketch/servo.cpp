@@ -37,17 +37,19 @@ void MyServo::turnRight() {
 MyServo servo[NUM_OF_SERVOS];
 
 /*
- Function to setup and calibrate servo pin and positions.
+ Function to setup and tweak servo pin and positions.
+ The max_left, max_right and center numbers are result of calibration.
  Looking at front of robo:
-             ___ ___
+            / -.- \
+         ==/___ ___\==
  left thigh | | | | right thigh
  left shin  | | | | right shin  
  */
 void servoSetup() {  
 
   /* pin, max_left, max_right, center */
-  servo[0].init(9, 145, 19, 83);  /* left thigh, init: center */
-  servo[1].init(10, 134, 5, 72); /* right thigh, init: center */
-  servo[2].init(11, 145, 35, -1); /* right shin, init: left*/
-  servo[3].init(6, 125, 22, -1); /* left shin, init: right*/ 
+  servo[LEFT_THIGH].init(9, 145, 19, 83);  /* init: center */
+  servo[RIGHT_THIGH].init(10, 134, 5, 72); /* init: center */
+  servo[RIGHT_SHIN].init(11, 145, 35, -1); /* init: left */
+  servo[LEFT_SHIN].init(6, 125, 22, -1);   /* init: right */ 
 }
